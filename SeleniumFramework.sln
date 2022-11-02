@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumFramework", "SeleniumFramework\SeleniumFramework.csproj", "{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieTest", "RookieTest\RookieTest.csproj", "{CCC40990-8782-44E8-84B3-C1892218DA97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeleniumAdvantage_Day1", "SeleniumAdvantage_Day1", "{00A45AA0-3808-432A-9FB3-355C1BAD1671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC40990-8782-44E8-84B3-C1892218DA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC40990-8782-44E8-84B3-C1892218DA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC40990-8782-44E8-84B3-C1892218DA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC40990-8782-44E8-84B3-C1892218DA97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C} = {00A45AA0-3808-432A-9FB3-355C1BAD1671}
+		{CCC40990-8782-44E8-84B3-C1892218DA97} = {00A45AA0-3808-432A-9FB3-355C1BAD1671}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C2F9CE1-6CA2-40D3-87FA-CCD0D9DA5411}
+	EndGlobalSection
+EndGlobal
