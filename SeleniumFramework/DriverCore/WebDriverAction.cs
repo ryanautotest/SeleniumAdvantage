@@ -112,14 +112,31 @@ namespace SeleniumFramework.DriverCore
                 throw ex;
             }
         }
+        // action double click
+        public void DoubleClick(String locator)
+        {
+            try
+            {
+                IWebElement doubleClick = FindElementByXpath(locator);
+                WebDriverAction action = new WebDriverAction(driver);
+                action.DoubleClick(locator);
+                TestContext.WriteLine("Double click on element " + locator + " successfuly");
+            }
+            catch (Exception ex)
+            {
+                TestContext.WriteLine("Double click on element " + locator + " failed with");
+                throw ex;
+            }
+        }
+
         // action get screenshot
+
         public void CapturedScreen()
         {
             try
             {
-                
                 Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile("Test.jpg", ScreenshotImageFormat.Jpeg);
+                ss.SaveAsFile("C:\\Users\\Andy\\Desktop\\Rookie - Toan\\SeleniumFramework\\RookieTest\\ScreenShot\\", ScreenshotImageFormat.Jpeg);
                 TestContext.WriteLine("Take screen shot successfully");
             }
             catch (Exception ex)
@@ -128,6 +145,11 @@ namespace SeleniumFramework.DriverCore
                 throw ex;
             }
         }
+        
+        /*public IWebElement WaitForClickable()
+        {
+            return WebDriverManager_.GetCurrentDriver().WaitForElementToBeClickable(locator, timeout);
+        }*/
         public IWebElement highlightElement(IWebElement element)
         {
                 IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
