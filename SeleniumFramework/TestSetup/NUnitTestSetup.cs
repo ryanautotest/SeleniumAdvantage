@@ -3,6 +3,7 @@ using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumFramework.DriverCore;
+using SeleniumFramework.Reporter;
 
 namespace SeleniumFramework.TestSetup;
 
@@ -11,9 +12,17 @@ public class NUnitTestSetup
     public IWebDriver? driver;
     public WebDriverAction? driverBaseAction;
 
+    [OneTimeSetUp]
+
+    public void OneTimeSetUp()
+    {
+        HtmlReport.createTest(TestContext.CurrentContext.Test.ClassName);
+    }
+
     [SetUp]
     public void Setup()
     {
+        HtmlReport.createNode(TestContext.CurrentContext.Test.ClassName, TestContext.CurrentContext.Test.Name);
         WebDriverManager_.InitDriver("chrome", 1920, 1080);
         driver = WebDriverManager_.GetCurrentDriver();
     }
@@ -32,6 +41,7 @@ public class NUnitTestSetup
             TestContext.WriteLine("Failed");
            // driverBaseAction.CapturedScreen();
         }
+        HtmlReport.flush();
     }
 
 }

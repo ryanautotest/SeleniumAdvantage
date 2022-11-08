@@ -11,7 +11,6 @@ namespace RookieTest
         {
             LoginPage loginPage = new LoginPage(driver);
             loginPage.InputUserName("test");
-
         }
     }
 }

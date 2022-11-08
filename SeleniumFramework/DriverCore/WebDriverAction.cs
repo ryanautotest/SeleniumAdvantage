@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumFramework.Reporter;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -89,10 +90,12 @@ namespace SeleniumFramework.DriverCore
             {
                 FindElementByXpath(locator).SendKeys(key);
                 TestContext.WriteLine("Sendkey into element " + locator + " successfuly");
+                HtmlReport.Pass("Sendkey into element " + locator + " successfuly");
             }
             catch (Exception ex)
             {
                 TestContext.WriteLine("Sendkey into element " + locator + " failed");
+                HtmlReport.Fail("Sendkey into element " + locator + " failed", TakeScreenShot());
                 throw ex;
             }
         }
@@ -131,19 +134,13 @@ namespace SeleniumFramework.DriverCore
 
         // action get screenshot
 
-        public void CapturedScreen()
+        public string TakeScreenShot()
         {
-            try
-            {
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile("C:\\Users\\Andy\\Desktop\\Rookie - Toan\\SeleniumFramework\\RookieTest\\ScreenShot\\", ScreenshotImageFormat.Jpeg);
-                TestContext.WriteLine("Take screen shot successfully");
-            }
-            catch (Exception ex)
-            {
-                TestContext.WriteLine("Take screen shot failed");
-                throw ex;
-            }
+            string path = HtmlReportDirectory.SCREENSHOT_PATH + ("/screenshot_" + DateTime.Now.ToString("yyyyMMddHHmmss")) + ".png";
+            var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+            screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+            return path;
+            
         }
         
         /*public IWebElement WaitForClickable()
