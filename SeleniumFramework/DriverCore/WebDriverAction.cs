@@ -54,6 +54,7 @@ namespace SeleniumFramework.DriverCore
             catch (Exception ex)
             {
                 TestContext.WriteLine("Click into element " + e.ToString + " failed");
+                HtmlReport.Fail("Click into element " + e.ToString + " failed", TakeScreenShot());
                 throw ex;
             }
         }
@@ -68,6 +69,7 @@ namespace SeleniumFramework.DriverCore
             catch (Exception ex)
             {
                 TestContext.WriteLine("Click into element " + locator + " failed");
+                HtmlReport.Fail("Click into element " + locator + " failed", TakeScreenShot());
                 throw ex;
             }
         }

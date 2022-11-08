@@ -1,11 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumFramework.DriverCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RookieTest.Page
 {
     public class LoginPage : WebDriverAction
@@ -14,11 +9,29 @@ namespace RookieTest.Page
         {
         }
 
-        private readonly String tfUsername = "//input[@name='uid']";
+        private readonly String txtFirstName = "//input[@id='userName']";
+        private readonly String txtPassword = "//input[@id='password']";
+        private readonly String btnLogin = "//button[@id='login']";
+        private readonly String btnNewUser = "//button[@id='newUser']";
 
-        public void InputUserName(String UserName)
+        public void InputFirstName(String firstName)
         {
-            SendKeys_(tfUsername, UserName);
+            SendKeys_(txtFirstName, firstName);
+        }
+
+        public void InputPassword(String password)
+        {
+            SendKeys_(txtPassword, password);
+        }
+
+        public void ClickLogin()
+        {
+            Click(btnLogin);
+        }
+
+        public void ClickNewUser()
+        {
+            Click(btnNewUser);
         }
     }
 }
