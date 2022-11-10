@@ -1,4 +1,5 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace SeleniumFramework.Reporter
             {
                 _report = createInstance();
             }
-            extentTestSuite = _report.CreateTest(className, classDescription);
+            extentTestSuite = _report.CreateTest(className, classDescription).AssignAuthor("RyanAutoTest").AssignDevice("Chrome 107.0.5304.106");
             return extentTestSuite;
         }
 
@@ -60,7 +61,7 @@ namespace SeleniumFramework.Reporter
             {
                 extentTestSuite = createTest(className);
             }
-            extentTestCase = extentTestSuite.CreateNode(testcase, description);
+            extentTestCase = extentTestSuite.CreateNode(testcase, description).AssignCategory("Regession");
             return extentTestCase;
         }
 
@@ -85,14 +86,18 @@ namespace SeleniumFramework.Reporter
 
         public static void Pass(string des)
         {
-            GetTest().Pass(des);
-            TestContext.WriteLine(des);
+            GetTest().Pass(MarkupHelper.CreateLabel(des, ExtentColor.Green));
+            
+        }
+
+        internal static void Pass(string v, object m)
+        {
+            throw new System.NotImplementedException();
         }
 
         public static void Fail(string des, string path)
         {
-            GetTest().Fail(des).AddScreenCaptureFromPath(path);
-            TestContext.WriteLine(des);
+            GetTest().Fail(MarkupHelper.CreateLabel(des, ExtentColor.Green)).AddScreenCaptureFromPath(path);
         }
         public static void Fail(string des, string ex, string path)
         {
@@ -105,5 +110,34 @@ namespace SeleniumFramework.Reporter
             GetTest().Info(MarkupHelperPlus.CreateRequest(request, response));
         }
         */
+
+        /*
+        public static void MarkUpHtml()
+        {
+            var htmlMarkup = {};
+            var m = MarkupHelper.CreateLabel(htmlMarkup, ExtentColor.Red);
+            GetTest().Info(m);
+        }
+        */
+
+        public static void MarkUpJson()
+        {
+            var json = "{'name':'Ryan', 'age':29, 'car':null}";
+            GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
+        }
+
+        public static void MarkUpTable()
+        {
+            string[][] table = new string[][] { new string[]
+            { "TestID", "TestName", "Description" },
+            new string[]
+            { "01", "Login Test", "Login with exist user name and password" },
+            new string[]
+            { "02", "Register Test", "Creat new account" },
+            new string[]
+            { "03", "Logout Test", "Logout" }
+            };
+            GetTest().Info(MarkupHelper.CreateTable(table));
+        }
     }
 }

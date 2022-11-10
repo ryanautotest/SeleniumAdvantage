@@ -134,6 +134,13 @@ namespace SeleniumFramework.DriverCore
             }
         }
 
+        //action get text
+
+        public string GetText(string locator)
+        {
+            return FindElementByXpath(locator).Text;
+        }
+
         // action get screenshot
 
         public string TakeScreenShot()

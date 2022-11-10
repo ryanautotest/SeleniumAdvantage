@@ -30,7 +30,7 @@ public class NUnitTestSetup
     [TearDown]
     public void TearDown()
     {
-        // _driver?.Quit();
+        driver.Close();
         TestStatus testStatus = TestContext.CurrentContext.Result.Outcome.Status;
         if (testStatus.Equals(TestStatus.Passed))
         {

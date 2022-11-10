@@ -9,14 +9,14 @@ namespace RookieTest.Page
         {
         }
 
-        private readonly String txtFirstName = "//input[@id='userName']";
+        private readonly String txtUserName = "//input[@id='userName']";
         private readonly String txtPassword = "//input[@id='password']";
         private readonly String btnLogin = "//button[@id='login']";
         private readonly String btnNewUser = "//button[@id='newUser']";
 
-        public void InputFirstName(String firstName)
+        public void InputUserName(String userName)
         {
-            SendKeys_(txtFirstName, firstName);
+            SendKeys_(txtUserName, userName);
         }
 
         public void InputPassword(String password)
