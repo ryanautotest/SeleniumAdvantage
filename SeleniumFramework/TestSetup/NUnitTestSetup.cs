@@ -39,7 +39,6 @@ public class NUnitTestSetup
         else if (testStatus.Equals(TestStatus.Failed))
         {
             TestContext.WriteLine("Failed");
-           // driverBaseAction.CapturedScreen();
         }
         HtmlReport.flush();
     }

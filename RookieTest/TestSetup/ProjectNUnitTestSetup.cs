@@ -13,7 +13,7 @@ namespace RookieTest.TestSetup
         [SetUp]
         public void SetUp()
         {
-            driver.Url = "https://demoqa.com/books";
+            driver.Url = "https://demoqa.com/login";
         }
 
         [TearDown]

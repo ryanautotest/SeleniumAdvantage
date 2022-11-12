@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SeleniumFramework.DriverCore
 {
     public class WebDriverAction
@@ -163,6 +164,6 @@ namespace SeleniumFramework.DriverCore
                 return element;
             }
         }
-    }
+}
 
 

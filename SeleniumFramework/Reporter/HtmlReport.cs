@@ -4,6 +4,8 @@ using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Net;
+using SeleniumFramework.APICore;
+using SeleniumFramework.Reporter.ExtentMarkup;
 
 namespace SeleniumFramework.Reporter
 {
@@ -104,12 +106,10 @@ namespace SeleniumFramework.Reporter
             GetTest().Fail(des).Fail(ex).AddScreenCaptureFromPath(path);
             TestContext.WriteLine(des);
         }
-        /*
-        public static void Info(HttpWebRequest request, HttpWebResponse response)
+        /*public static void Info(HttpWebRequest request, HttpWebResponse response)
         {
-            GetTest().Info(MarkupHelperPlus.CreateRequest(request, response));
+            GetTest().Info(MarkupHelperPlus.CreateAPIRequestLog(request, response));
         }
-        */
 
         /*
         public static void MarkUpHtml()
@@ -139,5 +139,11 @@ namespace SeleniumFramework.Reporter
             };
             GetTest().Info(MarkupHelper.CreateTable(table));
         }
+
+        public static void CreateAPIRequestLog(APIRequest request, APIResponse response)
+        {
+            GetTest().Info(MarkupHelperPlus.CreateAPIRequestLog(request, response));
+        }
+
     }
 }
