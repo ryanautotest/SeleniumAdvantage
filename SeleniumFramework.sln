@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieTest", "RookieTest\Ro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeleniumAdvantage_Day1", "SeleniumAdvantage_Day1", "{00A45AA0-3808-432A-9FB3-355C1BAD1671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostmanDemo", "PostmanDemo\PostmanDemo.csproj", "{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{CCC40990-8782-44E8-84B3-C1892218DA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCC40990-8782-44E8-84B3-C1892218DA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCC40990-8782-44E8-84B3-C1892218DA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2A49145F-0C4A-4A35-BE52-DC32C5A9BC6C} = {00A45AA0-3808-432A-9FB3-355C1BAD1671}
 		{CCC40990-8782-44E8-84B3-C1892218DA97} = {00A45AA0-3808-432A-9FB3-355C1BAD1671}
+		{9C841CB0-FF9E-4EF8-8C4F-1AAF418FF8C9} = {00A45AA0-3808-432A-9FB3-355C1BAD1671}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C2F9CE1-6CA2-40D3-87FA-CCD0D9DA5411}

@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using SeleniumFramework.APICore;
-using SeleniumFramework.Reporter;
 
 namespace SeleniumFramework.APICore
 {
-    public class APIResponse : APIRequest
+    public class APIResponse 
     {
         public HttpWebResponse response;
 
